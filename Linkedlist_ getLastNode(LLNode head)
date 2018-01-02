@@ -1,0 +1,13 @@
+LLNode getLastNode(LLNode head)
+{
+    // Your Code Here...
+      LLNode currentNode;
+  	if(head == null) {
+    	return null;
+    } else {
+    	while(head.next != null) {
+        	 head = head.next;
+        }
+      return head;
+    }
+}
