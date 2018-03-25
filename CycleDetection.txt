@@ -1,0 +1,16 @@
+boolean hasCycle(LLNode head)
+{
+  LLNode slow = head;
+  LLNode fast = head;
+  if(head == null) {
+    return false;
+  }
+  while (fast.next != null && fast != null) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if(fast == slow) {
+      return true;
+    }
+  }
+  return false;
+}
