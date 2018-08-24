@@ -1,0 +1,24 @@
+void maxHeapify(int arr[], int idx) {
+    // TODO:  Max-Heapify given array, at index idx
+  int left = 2 * idx + 1;
+    int right = 2 * idx + 2;
+    int largest = idx;
+
+    if( left < arr.length && arr[ left ] > arr[ largest ] )
+        largest = left;
+    if( right < arr.length && arr[ right ] > arr[ largest ] )
+        largest = right;
+    if( largest != idx )
+    {
+        int temp = arr[ idx ];
+        arr[ idx ] = arr[ largest ];
+        arr[ largest ] = temp;
+        maxHeapify( arr, largest );
+    }
+}
+void buildMaxHeap(int arr[]) {
+    // TODO:  Build Max Heap from given array, at index idx
+  for (int i = (arr.length-1/2);i>=0;i--)
+     maxHeapify(arr,i);
+  
+}
